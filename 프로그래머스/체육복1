@@ -1,0 +1,36 @@
+import java.util.Arrays;
+class Solution {
+    public int solution(int n, int[] lost, int[] reserve) {
+        int answer = n - lost.length; // 체육을 들을 수 있는 학생의 수를 전체 학생수에서 lost수를 뺀 수로 초기화
+        
+        Arrays.sort(lost);      // 비교전에 lost 배열 정렬
+        Arrays.sort(reserve);   // 비교전에 reserve 배열 정렬
+        
+        // 여분을 가진 학생이 도난당했을 때
+        for(int i=0; i<lost.length; i++){
+            for(int j=0; j<reserve.length; j++){
+                if(lost[i] == reserve[j]){  // 잃어버린 학생과 여분의 학생이 같은값일때 ( 여분을 가진 학생이 도난당했을 시)
+                    answer++;               // 어쨌든 여분의 학생은 체육복이 있기 때문에 체육을 들을 수 있다.
+                    lost[i] = -1;           // lost배열에서 빼준다(체육복이 있으니까)
+                    reserve[j] = -1;        // reserve 배열에서도 뺴준다(여분의 체육복이 없으니까)
+                    break;
+                }
+            }
+        }
+        // 도난당한 학생에게 체육복을 빌려줄 때
+        for(int i=0; i<lost.length; i++){
+            for(int j=0; j<reserve.length; j++){
+                if((lost[i]-1 == reserve[j]) || (lost[i]+1 == reserve[j])){   //잃어버린 학생의 앞과 뒷번호가 여분의 체육복이 있는 학생일 때
+                answer++;                                                     // 체육복을 빌려줄 수 있기 때문에 체육을 듣는 학생 +1
+                reserve[j] = -1;                                              // 체육복을 빌려줬기 때문에 reserve 배열에서 뺴준다.
+                break;
+                }
+            }
+        }
+        
+        
+        
+        
+        return answer;
+    }
+}
