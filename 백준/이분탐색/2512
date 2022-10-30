@@ -1,1 +1,36 @@
+## 백준 2512번 예산 분배 문제
 
+# 분배할 지방의 개수
+n = int(input())
+
+# 각 지방의 예산 요청 금액들
+budgetList = list(map(int,input().split()))
+
+# 배정 금액
+budget = int(input())
+
+# 상한액 최대, 최소
+start, end = 0, max(budgetList)
+
+# 이분 탐색
+while start<=end:
+  # 이분탐색할 중간 금액
+  mid = (start+end)//2
+  
+  # 총 요청 금액
+  total = 0
+  for i in budgetList:
+      # 요청금액이 중간값(상한액) 보다 크면
+      if i > mid:
+        # 중간값(상한액)으로 처리
+        total += mid
+      else:
+        total += i
+        
+  # 총 금액이 예산보다 작을경우 (탐색을 더 할 수 있을 경우)
+  if total<= budget:
+    start = mid+1
+  # 총 금액이 예산보다 클 경우(중간값보다 작아야함)
+  else:
+    end = mid - 1
+print(end)
