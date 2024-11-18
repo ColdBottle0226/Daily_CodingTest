@@ -1,0 +1,26 @@
+### 1)
+function solution(names) {
+    var answer = [];
+    for(let name in names){
+        if(name % 5 == 0){
+            answer.push(names[name])
+        }
+    }
+    return answer;
+}
+
+### 2)
+function solution(names) {
+    var answer = [];
+    for(let i=0; i<names.length; i+=5){
+        answer.push(names[i])
+    }
+    return answer;
+}
+
+### 3)
+function solution(names) {
+    var answer = [];
+    answer = names.filter((value, idx) => idx%5 == 0)
+    return answer;
+}
