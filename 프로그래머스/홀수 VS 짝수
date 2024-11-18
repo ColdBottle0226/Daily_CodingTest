@@ -1,0 +1,27 @@
+### 1)
+function solution(num_list) {
+    var answer = 0;
+    let a1 = 0;
+    let a2 = 0;
+    
+    for(let num in num_list){
+        if(num % 2 == 0){
+            a2 += num_list[num]
+        }else{
+            a1 += num_list[num]
+        }                
+    }
+    answer = (a1 > a2) ? a1 : (a2 > a1) ? a2 : a1 
+    return answer;
+}
+
+### 2)
+function solution(num_list) {
+    let odd = 0;
+    let even = 0;
+
+    num_list.forEach((x,i) => i%2 == 0 ? even += x : odd += x);
+
+
+    return Math.max(odd, even);
+}
