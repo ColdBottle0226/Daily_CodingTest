@@ -1,0 +1,7 @@
+### 1)
+function solution(a, b) {
+    var answer = 0;
+    let newArg = Number(a.toString() + b.toString())
+    answer = newArg >= 2*a*b ? newArg : 2*a*b
+    return answer;
+}
