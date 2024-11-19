@@ -1,0 +1,27 @@
+### 1)
+function solution(n_str) {
+    var answer = '';
+    let flag = false;
+    
+    for(let n of n_str){
+        if(n == 0 && !flag){
+                        
+        }else if(n !== 0 && !flag){
+            answer += n
+            flag = true;
+        }else{
+            answer += n
+        }
+    }
+    
+
+    return answer;
+}
+
+
+
+### 2)
+function solution(n_str) {
+    var answer = '';
+    return n_str.replaceAll(/^[0]+/g, '')
+}
