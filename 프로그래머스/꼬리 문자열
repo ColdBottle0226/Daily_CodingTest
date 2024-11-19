@@ -1,0 +1,9 @@
+### 1)
+function solution(str_list, ex) {
+    var answer = '';
+    let exct_list = str_list.filter(str => !str.includes(ex)) 
+    for(let exct of exct_list){
+        answer += exct
+    }
+    return answer;
+}
