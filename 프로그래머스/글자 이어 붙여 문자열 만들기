@@ -1,0 +1,8 @@
+### 1)
+function solution(my_string, index_list) {
+    var answer = '';
+    for(let idx in index_list){
+        answer += my_string[index_list[idx]]
+    }
+    return answer;
+}
