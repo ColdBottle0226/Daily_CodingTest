@@ -1,0 +1,12 @@
+### 1)
+function solution(num_list) {
+    var answer = -1;
+    for(num in num_list){
+        if(num_list[num] < 0){
+            answer = Number(num)
+            break;
+        }
+    }
+    
+    return answer;
+}
