@@ -1,0 +1,16 @@
+### 1)
+function solution(num_list) {
+    var answer = 0;
+    let holsu = ''
+    let jjsu = ''
+    
+    for(let num of num_list){
+        if(num % 2 == 0){
+            jjsu += num.toString()
+        }else{
+            holsu += num.toString() 
+        }
+    }
+    answer = Number(jjsu) + Number(holsu)
+    return answer;
+}
