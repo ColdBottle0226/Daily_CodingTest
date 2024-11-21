@@ -1,0 +1,8 @@
+### 1)
+function solution(arr) {
+    var answer = '';
+    for(let alpha of arr){
+        answer += alpha
+    }
+    return answer;
+}
