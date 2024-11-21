@@ -1,0 +1,12 @@
+### 1)
+function solution(num_list) {
+    var answer = [];
+    let lastOne = num_list[num_list.length - 1]
+    let lastTwo = num_list[num_list.length - 2]
+    if(lastOne > lastTwo){
+        answer = [...num_list, lastOne - lastTwo]
+    }else{
+        answer = [...num_list, lastOne * 2]
+    }
+    return answer;
+}
