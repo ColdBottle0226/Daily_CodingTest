@@ -1,0 +1,8 @@
+### 1)
+function solution(a, b) {
+    var answer = 0;
+    let frontA = a.toString() + b.toString()
+    let frontB = b.toString() + a.toString()
+    answer = frontA >= frontB ? frontA : frontB 
+    return Number(answer);
+}
