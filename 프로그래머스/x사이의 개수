@@ -1,0 +1,9 @@
+### 1)
+function solution(myString) {
+    var answer = [];
+    let splitString = myString.split("x")
+    answer = splitString.map((item, index) => {
+        return item.length
+    });
+    return answer;
+}
