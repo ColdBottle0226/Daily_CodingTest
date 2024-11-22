@@ -1,0 +1,16 @@
+### 1)
+function solution(a, b) {
+    var answer = 0;
+    let aOdd = (a%2 == 1)
+    let bOdd = (b%2 == 1)
+
+    if(aOdd && bOdd){
+        answer = a*a + b*b
+    }else if(aOdd || bOdd){
+        answer = 2*(a+b)        
+    }else{
+        answer = a>b?a-b:b-a
+    }
+    return answer;
+}
+
