@@ -1,0 +1,8 @@
+function solution(number) {
+    var answer = 0;
+    for(let num = 0; num<number.length; num++){
+        answer+=Number(number[num])
+    }
+    answer %= 9 
+    return answer;
+}
