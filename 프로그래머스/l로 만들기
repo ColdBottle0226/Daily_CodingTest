@@ -1,0 +1,8 @@
+function solution(myString) {
+    var answer = '';
+    let lCharAt = "L".charCodeAt(0)
+    for(let str in myString){
+        answer += myString[str].toUpperCase().charCodeAt(0) < lCharAt ? "l" :  myString[str]
+    }
+    return answer;
+}
