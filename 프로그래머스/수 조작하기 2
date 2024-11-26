@@ -1,0 +1,17 @@
+function solution(numLog) {
+    var answer = '';
+    
+    numLog.forEach((num,index,arr) => {
+        if(arr[index] - arr[index - 1] == 1){
+            answer += "w"
+        }else if(arr[index] - arr[index - 1] == -1){
+            answer += "s"
+        }else if(arr[index] - arr[index - 1] == 10){
+            answer += "d"
+        }else if(arr[index] - arr[index - 1] == -10){
+            answer += "a"
+        }
+        console.log('횟수:', index)
+    })
+    return answer;
+}
