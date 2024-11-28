@@ -1,0 +1,15 @@
+function solution(arr) {
+    var answer = [];
+    
+    const findTwo = (accumulator, currentValue, currentIndex) => {
+	if(currentValue == 2){
+	    accumulator.push(currentIndex);	
+	}
+
+    return accumulator; 
+}
+    const squaredArray = arr.reduce(findTwo, []);
+    answer = (squaredArray.length > 0) ? arr.slice(squaredArray[0], squaredArray[squaredArray.length - 1] + 1) : [-1]
+
+    return answer;
+}
