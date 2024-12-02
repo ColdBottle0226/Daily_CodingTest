@@ -1,0 +1,6 @@
+function solution(my_string, indices) {
+    var answer = '';
+    let stringArr = [...my_string]
+    answer = stringArr.filter((e,idx) => !indices.some(data => data == idx)).join("")    
+    return answer;
+}
