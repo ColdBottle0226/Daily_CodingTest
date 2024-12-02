@@ -4,3 +4,16 @@ function solution(my_string, indices) {
     answer = stringArr.filter((e,idx) => !indices.some(data => data == idx)).join("")    
     return answer;
 }
+
+
+function solution(m, a) {
+    var answer = '';
+
+    for(let i = 0; i<m.length; i++){
+        if(!a.includes(i)){
+            answer += m[i]
+        }
+    }
+
+    return answer;
+}
