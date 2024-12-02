@@ -1,0 +1,26 @@
+function solution(n, slicer, num_list) {
+    // n : 1,2,3,4
+    // slicer : a, b, c
+    var answer = []
+    let a = slicer[0]
+    let b = slicer[1]
+    let c = slicer[2]
+    switch(n){
+        case 1:     
+            answer = num_list.slice(0,b+1)
+            break;
+        case 2:   
+            answer = num_list.slice(a)
+            break;
+        case 3:   
+            answer = num_list.slice(a,b+1)
+            break;
+        case 4:            
+            // 0 4 2 - 0 2 4
+            for(let i=a; i<=b; i+=c){
+                answer.push(num_list[i])
+            }
+            break;
+    }
+    return answer;
+}
