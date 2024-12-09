@@ -1,0 +1,20 @@
+function solution(arr, flag) {
+    var answer = [];
+    flag.forEach((item, idx) => {
+        if(item){
+            let loopCnt = arr[idx] * 2
+            let i = 1 
+            while(i <= loopCnt){
+                answer.push(arr[idx])
+                i++
+            }            
+        }else{
+            let i = 1 
+            while(i <= arr[idx]){
+                answer.pop()
+                i++
+            }               
+        }
+    })
+    return answer;
+}
