@@ -1,0 +1,19 @@
+function solution(ineq, eq, n, m) {
+
+    var answer = 0;
+    let compare1 = new Function('a', 'b', 'return a < b');
+    let compare2 = new Function('a', 'b', 'return a <= b');
+    let compare3 = new Function('a', 'b', 'return a > b');
+    let compare4 = new Function('a', 'b', 'return a >= b');
+
+    if((ineq == "<") && (eq == "!")){
+        answer = compare1(n,m) ? 1 : 0
+    }else if((ineq=="<") && (eq == "=")){
+        answer = compare2(n,m) ? 1 : 0
+    }else if((ineq==">") && (eq== "!")){
+        answer = compare3(n,m) ? 1 : 0
+    }else if((ineq==">") && (eq=="=")){
+        answer = compare4(n,m) ? 1 : 0
+    }
+    return answer;
+}
