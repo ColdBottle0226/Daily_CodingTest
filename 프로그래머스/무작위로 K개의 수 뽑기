@@ -1,0 +1,13 @@
+function solution(arr, k) {
+    var answer = [];
+    arr.forEach((item, idx) => {
+        if(!answer.includes(item) && answer.length < k){
+            answer.push(item)
+        }
+    })
+    
+    while(answer.length < k){
+        answer.push(-1)
+    }
+    return answer;
+}
