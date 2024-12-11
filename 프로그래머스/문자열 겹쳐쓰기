@@ -1,0 +1,9 @@
+function solution(my_string, overwrite_string, s) {
+    var answer = '';
+    let beforeChgWord = my_string.substring(0,s)
+    let afterChgWord = my_string.substring(s + overwrite_string.length)
+    let chgWord = my_string.substring(s, s + overwrite_string.length)
+
+    answer = beforeChgWord + overwrite_string + afterChgWord
+    return answer;
+}
