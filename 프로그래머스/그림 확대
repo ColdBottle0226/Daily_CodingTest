@@ -1,0 +1,23 @@
+function solution(picture, k) {
+    var answer = [];
+    // "x.x"
+    function itemFunc(str){
+        let strArr = str.split("") // ['x','.','x']
+        let anserArr = strArr.reduce((acc,item,idx) => {
+            acc += item.repeat(k)
+            return acc
+        }, '') // "xxx...xxx"
+    
+        return anserArr;
+    }
+    
+    answer = picture.reduce((acc, item, idx) => {
+        // "xxx...xxx"
+        for(let i=0; i < k; i++){
+            acc.push(itemFunc(item))
+        }
+        return acc
+    }, [])
+    
+    return answer;
+}
