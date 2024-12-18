@@ -1,0 +1,16 @@
+function solution(rank, attendance) {
+    var answer = 0;
+    
+    const rankObj = rank.map((item, idx) => {
+        return {'rank':item, 'idx':idx}
+    })
+    
+    const filterAttendance = rankObj.filter((item, idx) => {
+        return attendance[idx]
+    })
+    filterAttendance.sort((a, b) => a.rank - b.rank); 
+    const threeCountObj = filterAttendance.slice(0,3)
+    console.log('filterAttendance:', filterAttendance)
+    answer = 10000 * filterAttendance[0].idx + 100 * filterAttendance[1].idx + filterAttendance[2].idx
+    return answer;
+}
