@@ -1,0 +1,29 @@
+function solution(code) {
+    var answer = '';
+    let mode = 0;
+    let ret = []
+    let codeArr = code.split("")
+    for(let idx=0; idx<codeArr.length; idx++){
+        if(mode == 0 && codeArr[idx] !== "1" && idx % 2 == 0){
+            ret.push(codeArr[idx])
+        } 
+        if(mode == 1 && codeArr[idx] !== "1" && idx % 2 == 1){
+            ret.push(codeArr[idx])
+        }
+        if(codeArr[idx] == "1"){
+            if(mode == 0){
+                mode = 1
+            }else{
+                mode = 0
+            }
+        }
+    }
+    answer = ret.join("")
+    
+    if(answer== ''){
+        answer = "EMPTY"
+    }
+
+    
+    return answer;
+}
