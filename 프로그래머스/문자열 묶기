@@ -1,0 +1,13 @@
+function solution(strArr) {
+    var answer = 0;
+    let lengthArr = strArr.reduce((acc, item, idx) => {
+        const itemLength = item.length;
+      
+        acc[itemLength] ? acc[itemLength] +=1 : acc[itemLength] = 1
+        
+        return acc;
+    },{})    
+    answer = Math.max(...Object.values(lengthArr))
+
+    return answer;
+}
