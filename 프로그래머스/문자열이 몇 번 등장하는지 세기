@@ -1,0 +1,12 @@
+function solution(myString, pat) {
+    var answer = 0;
+    let patIdx = myString.indexOf(pat) // 1
+    while(patIdx !== -1){
+        answer++;
+        myString = myString.substr(patIdx + 1)
+        patIdx = myString.indexOf(pat);
+    }
+
+    
+    return answer;
+}
