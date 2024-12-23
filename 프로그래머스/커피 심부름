@@ -1,0 +1,17 @@
+function solution(order) {
+    // 아메 - 4500, 라떼 - 5000
+    // 메뉴만 - 아이스
+    // 아무거나 - 아아
+    var answer = 0;
+    answer = order.reduce((acc, item, idx) => {
+        if(item.includes("americano")){
+            acc += 4500
+        }else if(item.includes("cafelatte")){
+            acc += 5000
+        }else{
+            acc += 4500
+        }
+        return acc;
+    }, 0)
+    return answer;
+}
