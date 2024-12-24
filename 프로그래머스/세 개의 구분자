@@ -1,0 +1,7 @@
+function solution(myStr) {
+    var answer = [];
+    let replaceStr = myStr.replaceAll("b","a").replaceAll("c","a")
+    let filterStr = replaceStr.split("a").filter(v=>v)
+    answer = filterStr.length > 0 ? filterStr : ["EMPTY"]
+    return answer;
+}
