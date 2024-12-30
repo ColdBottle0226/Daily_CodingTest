@@ -1,0 +1,29 @@
+function solution(arr, queries) {
+    var answer = [];
+    let s = 0;
+    let e = 0;
+    let k = 0;
+        
+    answer = queries.map((item, idx) => {
+        s = item[0];
+        e = item[1];
+        k = item[2];
+
+        let queryIdx = -1
+        
+        for(let i=s; i<=e; i++){
+            if(arr[i] > k){
+                if(queryIdx === -1){
+                    queryIdx = arr[i]   
+                }else if(queryIdx > arr[i]){
+                    queryIdx = arr[i]
+                }
+            }    
+        }
+        
+        return queryIdx
+    })
+    
+    
+    return answer;
+}
