@@ -1,0 +1,8 @@
+function solution(n) {
+    var answer = 0;
+    let nList = n.toString().split("")
+    nList.forEach(item =>  {
+        answer += Number(item)
+    })
+    return answer;
+}
