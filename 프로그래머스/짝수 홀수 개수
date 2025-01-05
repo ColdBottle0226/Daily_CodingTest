@@ -1,0 +1,16 @@
+function solution(num_list) {
+    var answer = [];
+    let oddCnt = 0;
+    let evenCnt = 0;
+    
+    num_list.forEach((item) => {
+        if(item % 2 == 0){
+            evenCnt += 1
+        }else{
+            oddCnt += 1
+        }
+    })
+    
+    answer = [evenCnt, oddCnt]
+    return answer;
+}
