@@ -1,0 +1,7 @@
+function solution(n, k) {
+    // 양꼬치 n 12000, 음료수 k 2000
+    var answer = 0;
+    const freeCnt = Math.floor(n/10)
+    answer = n * 12000 + (k - freeCnt) * 2000 
+    return answer;
+}
