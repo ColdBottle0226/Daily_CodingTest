@@ -1,0 +1,7 @@
+function solution(before, after) {
+    var answer = 0;
+    let beforeSorted = [...before].sort().join("")
+    let afterSorted = [...after].sort().join("")
+    answer = beforeSorted.includes(afterSorted) ? 1 : 0
+    return answer;
+}
