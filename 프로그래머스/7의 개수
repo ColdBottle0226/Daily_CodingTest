@@ -1,0 +1,10 @@
+function solution(array) {
+    var answer = 0;
+    let chgArr = [...array.join("")]
+    chgArr.forEach(item => {
+        if(item == '7'){
+            answer += 1
+        }
+    })
+    return answer;
+}
