@@ -1,0 +1,9 @@
+function solution(age) {
+    var answer = '';
+    let ageArr = [...age.toString()]
+    let chgAge = ageArr.map(item => {
+        return String.fromCharCode(Number(item) + 97)
+    })
+    answer = chgAge.join("")
+    return answer;
+}
