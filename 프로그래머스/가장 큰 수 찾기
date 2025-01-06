@@ -1,0 +1,12 @@
+function solution(array) {
+    var answer = [0, 0];
+    let maxVal = 0;
+    array.forEach((item, idx) => {
+        if(item > maxVal){
+            maxVal = item
+            answer[0] = maxVal
+            answer[1] = idx
+        }
+    })
+    return answer;
+}
