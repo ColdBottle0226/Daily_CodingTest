@@ -1,0 +1,14 @@
+function solution(numbers) {
+    var answer = 0;
+    answer = numbers.reduce((acc, item, idx, arr) => {
+        arr.forEach((x,y) => {
+            if(idx!==y){
+                if(acc < item * x){
+                    acc = item * x
+                }
+            }
+        })
+        return acc
+    })
+    return answer;
+}
