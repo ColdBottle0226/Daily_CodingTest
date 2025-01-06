@@ -1,6 +1,6 @@
 function solution(price) {
     var answer = 0;
     const salePercent = (price >= 500000) ? 20 : (price >= 300000) ? 10 : (price >= 100000) ? 5 : 0
-    answer = price - (price * salePercent / 100)
+    answer = Math.floor(price - (price * salePercent / 100))
     return answer;
 }
