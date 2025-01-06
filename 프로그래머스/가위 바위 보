@@ -1,0 +1,9 @@
+function solution(rsp) {
+    var answer = '';
+    let rspArr = [...rsp]
+    
+    answer = rspArr.map((item) => {
+        return item == 2 ? 0 : item == 0 ? 5 : 2
+    }).join("")
+    return answer;
+}
