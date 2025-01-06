@@ -1,0 +1,25 @@
+function solution(polynomial) {
+    var answer = [];
+    
+    let arr = polynomial.split(" + ")
+    let num = arr.filter(item => !item.includes("x")).map(item => Number(item))
+    let xLetter = arr.filter(item => item.includes("x")).map((item) => item == 'x' ? 1 : Number(item.split('x')[0]))
+
+    const numVal = num.reduce((acc, item) => {
+        return acc + item
+    }, 0)
+    const xVal = xLetter.reduce((acc, item) => {
+        return acc + item
+    }, 0)
+    
+    if(xVal !== 0){
+        answer.push((xVal == 1) ? "x" : xVal + "x")    
+    }
+    
+    
+    if(numVal !== 0){
+        answer.push(numVal)    
+    }
+    
+    return answer.join(" + ");
+}
