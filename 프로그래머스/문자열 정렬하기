@@ -1,0 +1,8 @@
+function solution(my_string) {
+    var answer = [];
+    let numArr = [...my_string].filter(item => item.charCodeAt() < 65 )
+    answer = numArr.map((item) => {
+        return Number(item)
+    }).sort((a, b) => a - b)
+    return answer;
+}
