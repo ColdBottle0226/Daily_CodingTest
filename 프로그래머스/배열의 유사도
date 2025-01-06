@@ -1,0 +1,7 @@
+function solution(s1, s2) {
+    var answer = 0;
+    s2.forEach(item => {
+        s1.some(val => val == item) ? answer += 1 : ''
+    })
+    return answer;
+}
