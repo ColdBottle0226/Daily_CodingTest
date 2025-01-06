@@ -1,0 +1,10 @@
+function solution(emergency) {
+    var answer = [];
+    let copyEmergency = [...emergency]
+    let sortedArr = copyEmergency.sort((a, b) => b - a)
+    
+    answer = emergency.map((item, idx) => {
+         return sortedArr.indexOf(item) + 1;
+    })
+    return answer;
+}
