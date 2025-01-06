@@ -1,0 +1,10 @@
+function solution(n) {
+    var answer = 1;
+    let cnt = 1;
+    while(cnt <= n){
+        if(cnt * answer > n) break;
+        cnt = cnt * answer  
+        answer++;
+    }
+    return answer - 1;
+}
