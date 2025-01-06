@@ -1,0 +1,13 @@
+function solution(my_string) {
+    var answer = '';
+    let strArr = [...my_string]
+    strArr.forEach(item => {
+        !answer.includes(item) ? answer += item : ''
+    })
+    return answer;
+}
+
+
+function solution(my_string) {
+    return [...new Set(my_string)].join('');
+}
