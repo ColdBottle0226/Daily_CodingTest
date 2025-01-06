@@ -1,0 +1,12 @@
+function solution(score) {
+    var answer = [];
+    let avgScore = score.map((item, idx) => {
+        return (item[0] + item[1]) / 2
+    })
+    let copyScore = [...avgScore].sort((a,b) => b - a)
+    
+    answer = avgScore.map(item => {
+        return copyScore.indexOf(item) + 1
+    })
+    return answer;
+}
