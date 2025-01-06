@@ -1,0 +1,8 @@
+function solution(my_string) {
+    var answer = '';
+    let strArr = [...my_string]
+    answer = strArr.map(item => {
+        return (item == item.toUpperCase()) ? item.toLowerCase() : item.toUpperCase() 
+    }).join("")
+    return answer;
+}
