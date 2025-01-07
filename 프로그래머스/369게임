@@ -1,0 +1,13 @@
+function solution(order) {
+    var answer = 0;
+    const answerList = new Set(["3", "6", "9"])
+    let orderArr = [...order.toString()]
+   
+    answer = orderArr.reduce((acc, item, idx) => {
+        if(answerList.has(item)){
+            acc++
+        }
+        return acc;
+    },0)
+    return answer;
+}
