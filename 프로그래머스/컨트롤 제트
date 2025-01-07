@@ -1,0 +1,13 @@
+function solution(s) {
+    var answer = 0;
+    let sArr = s.split(" ")
+    
+    sArr.forEach((item, idx) => {
+        if(item === 'Z'){
+            answer = answer - Number(sArr[idx - 1])
+        }else{
+            answer = answer + Number(item)
+        }
+    })
+    return answer;
+}
