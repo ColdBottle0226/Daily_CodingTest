@@ -1,0 +1,23 @@
+function solution(s) {
+    var answer = '';
+    let filterOnce = new Map(); 
+    let sArr = [...s]
+    
+    sArr.forEach((item) => {
+        if(filterOnce.has(item)){
+            const value = filterOnce.get(item)
+            filterOnce.set(item, value + 1)
+        }else{
+            filterOnce.set(item, 1)
+        }
+    })
+    
+    const findKeysByValue = (map) => {
+      return Array.from(map)
+        .filter(([key, value]) => value === 1)
+        .map(([key]) => key); 
+    };
+
+    answer = findKeysByValue(filterOnce).sort().join("")
+    return answer;
+}
