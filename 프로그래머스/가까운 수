@@ -1,0 +1,11 @@
+function solution(array, n) {
+    var answer = array[0];
+    array.forEach((item, idx) => {
+        if(Math.abs(answer - n) > Math.abs(item - n)){
+            answer = item
+        }else if(Math.abs(answer - n) == Math.abs(item - n)){
+            answer = answer > item ? item : answer
+        }
+    })
+    return answer;
+}
