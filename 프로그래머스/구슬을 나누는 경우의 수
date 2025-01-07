@@ -1,0 +1,14 @@
+function solution(balls, share) {
+    var answer = 0;
+    const factorial = (x) => {
+        let result = BigInt(1);
+        let i = 1;
+        while(i <= x){
+            result *= BigInt(i);
+            i++;
+        }
+        return result
+    }
+    answer = factorial(balls) / (factorial(balls-share) * factorial(share))
+    return answer;
+}
