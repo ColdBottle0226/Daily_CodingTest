@@ -1,0 +1,12 @@
+function solution(my_string) {
+    var answer = 0;
+    answer = my_string.split("")
+                      .map(item => item.charCodeAt())
+                      .filter(item => item < 65)
+                      .map(item => String.fromCharCode(item))
+                      .reduce((acc, item) => {
+                          return (acc + Number(item))
+                        }, 0)
+    
+    return answer;
+}
