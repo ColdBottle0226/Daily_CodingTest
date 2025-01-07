@@ -1,0 +1,8 @@
+function solution(cipher, code) {
+    var answer = '';
+    let cipherList = [...cipher]
+    answer = cipherList.filter((item, idx) => {
+        return (idx + 1) % code == 0
+    }).join("")
+    return answer;
+}
