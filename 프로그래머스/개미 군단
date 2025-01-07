@@ -1,0 +1,19 @@
+function solution(hp) {
+    var answer = 0;
+    let remainVal = hp
+
+    while(remainVal > 0){
+        if(Math.floor(remainVal / 5) > 0){
+            answer += Math.floor(remainVal / 5)
+            remainVal %= 5
+        }else if(Math.floor(remainVal / 3) > 0){
+            answer += Math.floor(remainVal / 3)
+            remainVal %= 3
+        }else{
+            answer += 1
+            remainVal -= 1
+        }
+    }
+    
+    return answer;
+}
