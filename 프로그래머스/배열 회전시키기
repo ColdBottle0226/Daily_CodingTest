@@ -1,0 +1,13 @@
+function solution(numbers, direction) {
+    var answer = [];
+    const numberLength = numbers.length - 1
+    answer = numbers.map((item, idx, arr) => {
+        if(direction === "right"){
+            item = idx - 1 < 0 ? arr[numberLength] : arr[idx-1]   
+        }else{
+            item = idx + 1 > numberLength ? arr[0] : arr[idx+1]   
+        }
+        return item
+    })
+    return answer;
+}
