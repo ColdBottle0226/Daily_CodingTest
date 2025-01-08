@@ -1,0 +1,22 @@
+###1) function solution(arr, queries) {
+    queries.forEach((item,idx) => {
+        let query = item
+        let i = query[0]
+        let j = query[1]
+        let temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+    })
+    return arr;
+}
+
+
+###2) function solution(arr, queries) {
+  const swap = ([i, j]) => {
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  };
+    
+  queries.forEach(swap);
+
+  return arr;
+}
