@@ -1,0 +1,6 @@
+function solution(bin1, bin2) {
+    var answer = '';
+    let parseResult = parseInt(bin1, 2) + parseInt(bin2, 2)
+    answer = parseResult.toString(2)
+    return answer;
+}
