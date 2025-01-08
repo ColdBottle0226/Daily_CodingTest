@@ -1,0 +1,8 @@
+function solution(a, d, included) {
+    var answer = 0;
+    let chgIncluded = included.map((item, idx) => item ? (a + (idx * d)) : 0)
+    answer = chgIncluded.reduce((acc, item) => {
+        return acc + item
+    })
+    return answer;
+}
