@@ -1,0 +1,14 @@
+function solution(A, B) {
+    var answer = 0;
+    let chgStr = A;
+    for(let i=0; i<A.length; i++){
+        if(A==B || chgStr==B){
+            break;
+        }
+
+        chgStr = chgStr.charAt(chgStr.length-1) + chgStr.substring(0,chgStr.length - 1) 
+        answer++;
+    }
+    answer = (answer == A.length) ? -1 : answer
+    return answer;
+}
