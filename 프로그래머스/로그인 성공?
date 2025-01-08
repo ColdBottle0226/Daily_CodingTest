@@ -1,0 +1,16 @@
+function solution(id_pw, db) {
+    var answer = '';
+    const dbMap = new Map([...db])
+    let id = id_pw[0]
+    let pw = id_pw[1]
+    
+    if(!dbMap.has(id)){
+        answer = "fail"
+    }else if(dbMap.get(id) !== pw){
+        answer = "wrong pw"
+    }else{
+        answer = "login"
+    }
+    
+    return answer;
+}
