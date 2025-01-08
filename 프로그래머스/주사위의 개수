@@ -1,0 +1,10 @@
+function solution(box, n) {
+    var answer = 0;
+    let x = box[0]
+    let y = box[1]
+    let z = box[2]
+    
+    answer = Math.floor(x / n) * Math.floor(y / n) * Math.floor(z / n) 
+
+    return answer;
+}
