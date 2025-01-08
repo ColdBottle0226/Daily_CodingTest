@@ -1,0 +1,11 @@
+function solution(intStrs, k, s, l) {
+    var answer = [];
+    answer = intStrs.reduce((acc, item, idx) => {
+        const chgVal = BigInt(item.slice(s, s + l))
+        if( chgVal > k){
+            acc.push(chgVal)
+        }
+        return acc;
+    },[])
+    return answer;
+}
