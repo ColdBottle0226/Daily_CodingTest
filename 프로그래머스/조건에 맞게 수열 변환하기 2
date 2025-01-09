@@ -1,0 +1,25 @@
+function solution(arr) {
+    var answer = 0;
+    let prevArr = [...arr];
+    let currArr = [];
+    const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+    
+    while(true){
+        currArr = prevArr.map(item => {
+            if(item>50 && item%2==0){
+                return item / 2
+            }else if(item<50 && item%2==1){
+                return item * 2 + 1
+            }else{
+                return item
+            }
+        })
+       if(equals(prevArr, currArr)){
+            break;
+        }
+        prevArr = currArr
+        
+        answer++;
+    }
+    return answer;
+}
