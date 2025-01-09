@@ -1,0 +1,26 @@
+function solution(array) {
+    var answer = 0;
+    let obj = {}
+    array.forEach(item => {
+        // 이미 있는경우
+        if(obj.hasOwnProperty(item)){
+            obj[item] += 1
+        }else{
+            obj[item] = 1
+        }
+    })
+    
+    const maxVal = Math.max(...Object.values(obj))
+    const valueArr = Object.values(obj)
+    const duplicateMax = valueArr.filter(item => {
+        return item == maxVal
+    })
+    if(duplicateMax.length > 1){
+        answer = -1
+    }else{
+        const findKey = Object.keys(obj).find(key => obj[key] === maxVal)
+        answer = Number(findKey)
+    }
+    
+    return answer;
+}
