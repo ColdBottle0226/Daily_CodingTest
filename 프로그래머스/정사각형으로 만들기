@@ -1,0 +1,22 @@
+function solution(arr) {
+    var answer = [...arr];
+    let rowCnt = arr.length   
+    let colCnt = arr[0].length  
+    
+    while(rowCnt !== colCnt){
+        // 행의수 > 열의수
+        if(rowCnt > colCnt){
+            answer = answer.map((item, idx) => {
+                return [...item, 0]
+           })
+           colCnt++;
+        }else{
+            // 열의수 > 행의수
+            let zeroList = [...arr[0]].fill(0)
+            answer = [...answer, zeroList]
+            rowCnt++;
+        }
+    }
+
+    return answer;
+}
