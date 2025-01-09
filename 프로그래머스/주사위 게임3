@@ -1,0 +1,39 @@
+function solution(a, b, c, d) {
+    let everyDice = [a,b,c,d]
+    var answer = 0;
+
+    for(let i=0; i<everyDice.length; i++){
+        const item = everyDice[i]
+        let dupdiceList = everyDice.filter((val => item==val))
+        let elseList = everyDice.filter((val => item!==val))
+        // 모두 같다면
+        if(dupdiceList.length == 4){
+            answer = 1111 * item
+            break;
+        }else if(dupdiceList.length == 3){
+            // 3개만 같다면
+            let elseVal = elseList[0]
+            answer=(10 * item + elseVal)*(10 * item + elseVal)
+            break;
+        }else if(dupdiceList.length == 2){
+            // 두 개가 같을때,
+            // 1) 나머지 두개도 같은경우
+            if(elseList[0] == elseList[1]){
+                answer=(item+elseList[0])*Math.abs(item-elseList[0])
+            }else{
+             // 2) 나머지 두개가 다른경우
+                answer = elseList[0] * elseList[1]
+            }
+            break;
+        }else{
+            // 모두 다른경우
+            // 마지막인경우만
+            if(i == everyDice.length - 1){
+                answer = everyDice.sort((a,b) => a-b)[0]     
+            }      
+        }
+    }
+   
+ 
+    return answer;
+}
