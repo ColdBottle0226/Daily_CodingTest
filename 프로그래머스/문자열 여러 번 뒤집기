@@ -1,0 +1,16 @@
+function solution(my_string, queries) {
+    let splitStr = my_string.split("")
+    
+    queries.forEach(item => {
+        let s = item[0];
+        let e = item[1];
+        let rp = 0;
+        
+        while(s + rp <= e - rp ){
+           [splitStr[s+rp], splitStr[e-rp]] = [splitStr[e-rp], splitStr[s+rp]];
+            rp++;
+        }
+    })
+    
+    return splitStr.join("");
+}
