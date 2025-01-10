@@ -1,0 +1,21 @@
+function solution(spell, dic) {
+    var answer = 2;
+    
+    for(let i=0; i<dic.length; i++){
+        let spellSet = new Set(spell)
+        const item = [...dic[i]]
+        let dicItemRepeat = 0;
+        
+        item.forEach(val => {
+            if(spellSet.has(val)){
+                spellSet.delete(val)
+                dicItemRepeat++;
+            }
+        })
+        if(dicItemRepeat == spell.length){
+            answer = 1
+            break;
+        }
+    }
+    return answer;
+}
