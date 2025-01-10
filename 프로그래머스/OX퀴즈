@@ -1,0 +1,17 @@
+function solution(quiz) {
+    var answer = [];
+    
+    const calculate = (expression) => {
+        return new Function(`return ${expression}`)()
+    };
+    
+    answer = quiz.map(item => {
+        let splitItem = item.split("=")
+        let realResult = calculate(splitItem[0])
+        let quizResult = splitItem[1]
+
+        return realResult == quizResult ? "O" : "X"
+    })
+
+    return answer;
+}
