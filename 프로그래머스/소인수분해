@@ -1,0 +1,14 @@
+function solution(n) {
+    var result = new Set();
+    while(n!==1){
+        for(let i=2; i<=n; i++){
+            if(n%i==0){
+                n/=i
+                result.add(i)
+                break;
+            }
+        }
+    }
+    answer = [...result]
+    return answer;
+}
