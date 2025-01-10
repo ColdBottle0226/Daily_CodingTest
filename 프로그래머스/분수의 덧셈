@@ -1,0 +1,46 @@
+function solution(numer1, denom1, numer2, denom2) {
+    let answer = []
+    // 1) 분모 최소 공배수 찾기
+    let lcm = 1;
+    while(true){
+      if((lcm % denom1 == 0) && (lcm % denom2 == 0)){
+        break;
+      }
+      lcm++;
+    }
+    
+    if(denom1 == lcm){
+        numer2 *= (lcm / denom2)
+        denom2 *= (lcm / denom2)
+        console.log('denom1', denom2, numer2)
+    }else if(denom2 == lcm){
+        numer1 *= (lcm / denom1)
+        denom1 *= (lcm / denom1)     
+    }else{
+        numer1 *= (lcm / denom1)
+        denom1 *= (lcm / denom1)          
+        numer2 *= (lcm / denom2)
+        denom2 *= (lcm / denom2) 
+    }
+    
+    // 2) 두 분수 더하기
+    let denom = denom1
+    let numer = numer1 + numer2
+    
+    // 3) 분모/ 분자의 최대 공약수가 1이 될때까지 나누기
+    let gcd = denom > numer ? numer : denom
+    while(gcd!==1){
+        for(let i=gcd; i>0; i--){
+            if(i==1){
+                gcd=1
+            }else if(denom%i==0 && numer%i==0){
+                gcd=i
+                numer /= gcd
+                denom /= gcd
+                break;
+            }
+        }
+    }
+    answer = [numer,denom]
+    return answer;
+}
