@@ -1,0 +1,24 @@
+function solution(sides) {
+    var answer = 0;
+    let possibleVal = 0
+    // max > 두변 합
+    let max = sides.sort((a,b)=>(b-a))[0]
+    let min = sides.sort((a,b)=>(b-a))[1]
+
+    while(true){
+        // 1. 추가 값이 max가 아닌 경우
+        if(possibleVal<max && possibleVal+min > max){
+            answer++;
+        }
+        // 2. 추가 값이 max 인 경우
+        if(possibleVal>=max){
+            if(max + min > possibleVal){
+                answer++;   
+            }else{
+                break;
+            }
+        }
+        possibleVal++;
+    }
+    return answer;
+}
