@@ -1,0 +1,12 @@
+function solution(numlist, n) {
+    const compareFunc = (a,b) => {
+        if(Math.abs(n-a) - Math.abs(n-b) == 0){
+            return b - a
+        }else{
+            return (Math.abs(n-a) - Math.abs(n-b))
+        }
+    }
+    answer = numlist.sort((a,b) => compareFunc(a,b))
+
+    return answer;
+}
