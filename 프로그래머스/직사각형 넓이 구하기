@@ -1,0 +1,11 @@
+function solution(dots) {
+    let dotsWidth = []
+    let dotsHeigth = []
+    for(let i=1; i<dots.length; i++){
+        let inputWidth = Math.abs(dots[0][0] - dots[i][0])
+        let inputHeigth = Math.abs(dots[0][1] - dots[i][1])
+        if(inputWidth !==0)dotsHeigth.push(inputWidth)
+        if(inputHeigth !==0)dotsWidth.push(inputHeigth)
+    }
+    return dotsWidth[0] * dotsHeigth[0];
+}
