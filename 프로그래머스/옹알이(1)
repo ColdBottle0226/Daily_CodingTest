@@ -1,0 +1,27 @@
+### 1) function solution(babbling) {
+    var answer = 0;
+    // 하나씩만 조합 가능  
+    for(let i=0; i< babbling.length; i++){
+        const item = babbling[i]
+        if(item.includes("aya")){
+            babbling[i] = babbling[i].replace("aya","")
+        }
+        if(item.includes("ye")){
+            babbling[i] = babbling[i].replace("ye","")
+        }
+        if(item.includes("woo")){
+            babbling[i] = babbling[i].replace("woo","")
+        }
+        if(item.includes("ma")){
+            babbling[i] = babbling[i].replace("ma","")
+        }
+        if(babbling[i] == ''){
+            answer++
+        }
+    }
+
+    
+    return answer;
+}
+
+### 2) 
