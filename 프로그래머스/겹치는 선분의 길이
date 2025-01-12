@@ -1,0 +1,18 @@
+function solution(lines) {
+    var answer = 0;
+    let everyLines = Array(200).fill(0);;
+
+    for(let i=0; i<=2; i++){
+        const startIdx = lines[i][0] + 100
+        const endIdx = lines[i][1] + 100
+        
+        for(let j=startIdx; j<endIdx; j++){
+            
+            everyLines[j] = everyLines[j] + 1
+        }
+    }
+    
+    answer = everyLines.filter(item => item>1).length
+    
+    return answer;
+}
