@@ -1,0 +1,25 @@
+function solution(book_time) {
+    var answer = 0;
+    const chgTime = (item) => {
+        let splitHour = item.split(":")
+        return Number(splitHour[0] * 60) + Number(splitHour[1])
+    }
+    let bookTimeList = book_time.map(item => {
+        return [chgTime(item[0]), chgTime(item[1]) + 10]
+    }).sort((a,b) => a[0] - b[0])
+    
+    let bookingRoom = []
+    
+    bookTimeList.forEach(item => {
+        let firstRoom = bookingRoom[0] ?? [] 
+        if(bookingRoom.length > 0 && firstRoom[1] <= item[0]){
+            bookingRoom.shift()
+        }
+        
+        bookingRoom.push(item)
+        bookingRoom.sort((a,b) => a[1] - b[1])
+    })
+    
+    
+    return bookingRoom.length;
+}
