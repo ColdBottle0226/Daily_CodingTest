@@ -1,0 +1,10 @@
+function solution(numbers) {
+    var answer = '';
+    let sortedStr = numbers.map(item => item.toString()).sort((a,b) => {
+        return a+b > b+a ? -1 : 1
+    })
+    
+    answer = sortedStr[0] == 0 ? "0" : sortedStr.join("")
+    
+    return answer;
+}
