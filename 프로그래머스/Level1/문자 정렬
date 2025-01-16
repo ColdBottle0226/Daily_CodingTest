@@ -1,0 +1,22 @@
+function solution(files) {
+    var answer = [];
+    const parseFile = (file) => {
+        const match = file.match(/^([a-zA-Z\s.-]+)(\d+)(.*)$/);
+        return {
+            original: file,       // 원래 파일명
+            head: match[1].toLowerCase(), // HEAD (대소문자 구분 X)
+            number: parseInt(match[2]),  // NUMBER (정수로 변환)
+        };
+    };
+    
+    let parseFileList = files.map(item => parseFile(item))
+    
+    parseFileList.sort((a, b) => {
+        if (a.head !== b.head) return a.head.localeCompare(b.head);
+        if (a.number !== b.number) return a.number - b.number;
+        return 0;
+    });
+    
+    answer = parseFileList.map(item => item.original)
+    return answer;
+}
