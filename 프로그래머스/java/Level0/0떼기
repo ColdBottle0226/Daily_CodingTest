@@ -1,0 +1,15 @@
+class Solution {
+    public String solution(String n_str) {
+        StringBuilder sb = new StringBuilder();
+        char[] ch = n_str.toCharArray();
+        for(int i=0; i<ch.length; i++){
+            if(ch[i]!='0'){
+                for(int j=i; j<ch.length; j++){
+                    sb.append(ch[j]);
+                }
+                break;
+            }
+        }
+        return sb.toString();
+    }
+}
